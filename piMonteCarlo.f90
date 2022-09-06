@@ -1,6 +1,6 @@
 program main
     implicit none
-    integer      :: n=1e7          ! the number of points
+    integer      :: n=1e8          ! the number of points
     real(kind=8) :: x=0.D0, y=0.D0 ! the coordinates of the last point
     integer      :: nin=0          ! the number of points within the circle
     integer      :: i              ! a counter for the loop
