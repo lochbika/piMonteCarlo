@@ -1,22 +1,17 @@
 program main
     implicit none
-    
     integer      :: n=1e7          ! the number of points
     real(kind=8) :: x=0.D0, y=0.D0 ! the coordinates of the last point
-    integer      :: nin=0          ! the number of points within and outside of the circle
-    
+    integer      :: nin=0          ! the number of points within the circle
     integer      :: i              ! a counter for the loop
-    
-    real(kind=8) :: p              ! the end result
-    
+    real(kind=8) :: p              ! the end result: (almost) Pi ;)
     ! initialize the random number generator
     CALL random_seed()
-    
+    ! draw n points and count how many fall within a circle with radius one
     do i=1,n
         ! draw the random coordinates
         CALL random_number(x)
         CALL random_number(y)
-        
         ! check if the coordinates fall within a circle with radius one
         if(sqrt(x**2 + y**2) <= 1.D0) then
             nin=nin+1
